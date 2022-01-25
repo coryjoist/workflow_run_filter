@@ -1,16 +1,10 @@
-name: build-test-ci
+name: build
 
 on:
-  workflow_dispatch:
-    inputs:
-      git-ref:
-        description: 'Git ref to build'
-        required: true
-        default: 'develop'
   push:
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
     steps:
 
@@ -24,7 +18,3 @@ jobs:
     - name: Build Code
       id: code_build
       run: echo "Code is being built..."
-
-    - name: Test Code
-      id: code_test
-      run: echo "Running Unit Tests."

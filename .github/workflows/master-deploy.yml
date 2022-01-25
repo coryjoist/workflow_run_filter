@@ -2,7 +2,7 @@ name: master-deploy
 
 on:
   workflow_run:
-    workflows: ["build-test-ci"]
+    workflows: ["test"]
     branches: [master]
     types:
     - completed

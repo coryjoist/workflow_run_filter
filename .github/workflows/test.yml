@@ -1,0 +1,22 @@
+name: test
+
+on:
+  workflow_run:
+    workflows: ["build"]
+    branches:
+    - develop
+    - master
+    types:
+    - completed
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: "Check branch"
+      run: echo "workflow_run branch is $GITHUB_REF_NAME"
+
+    - name: Test Code
+      id: code_test
+      run: echo "Running Tests..."
