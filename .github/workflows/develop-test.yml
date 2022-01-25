@@ -1,11 +1,10 @@
-name: test
+name: develop-test
 
 on:
   workflow_run:
     workflows: ["build"]
     branches:
     - develop
-    - master
     types:
     - completed
 
@@ -16,7 +15,3 @@ jobs:
 
     - name: "Check branch"
       run: echo "workflow_run branch is $GITHUB_REF_NAME"
-
-    - name: Test Code
-      id: code_test
-      run: echo "Running Tests..."

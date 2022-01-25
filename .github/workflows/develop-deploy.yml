@@ -2,7 +2,7 @@ name: develop-deploy
 
 on:
   workflow_run:
-    workflows: ["test"]
+    workflows: ["predeploy-tests"]
     branches: [develop]
     types:
     - completed
@@ -15,6 +15,3 @@ jobs:
 
     - name: "Check branch"
       run: echo "workflow_run branch is $GITHUB_REF_NAME"
-
-    - name: Deploy
-      run: echo "Deploying..."
