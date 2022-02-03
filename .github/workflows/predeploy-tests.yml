@@ -15,4 +15,4 @@ jobs:
     steps:
 
     - name: "Check branch"
-      run: echo "workflow_run branch is $GITHUB_REF_NAME"
+      run: echo "workflow_run executing from branch \'develop\', which should match GITHUB_REF_NAME value of $GITHUB_REF_NAME"
